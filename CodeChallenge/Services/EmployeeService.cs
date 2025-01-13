@@ -9,11 +9,13 @@ using System.Threading;
 
 namespace CodeChallenge.Services
 {
+    /// Service implementation for managing Employee records and their reporting structure.
     public class EmployeeService : IEmployeeService
     {
         private readonly IEmployeeRepository _employeeRepository;
         private readonly ILogger<EmployeeService> _logger;
 
+        /// Constructor for injecting dependencies.
         public EmployeeService(ILogger<EmployeeService> logger, IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
