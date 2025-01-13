@@ -2,6 +2,7 @@
 
 namespace CodeChallenge.Repositories
 {
+    /// Repository interface for managing Compensation records.
     public interface ICompensationRepository
     {
         // Adds a new compensation record
