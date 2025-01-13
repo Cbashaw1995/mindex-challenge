@@ -11,8 +11,11 @@ using Microsoft.Extensions.Hosting;
 
 namespace CodeChallenge.Config
 {
+
+    /// Configures and sets up the web application, including services, database seeding, and middleware.
     public class App
     {
+        /// Configures and builds the web application.
         public WebApplication Configure(string[] args)
         {
             args ??= Array.Empty<string>();
@@ -39,6 +42,7 @@ namespace CodeChallenge.Config
             return app;
         }
 
+        /// Adds scoped services and configurations to the DI container.
         private void AddServices(IServiceCollection services)
         {
 
@@ -51,6 +55,7 @@ namespace CodeChallenge.Config
             services.AddControllers();
         }
 
+        /// Seeds the in-memory Employee database with initial data.
         private void SeedEmployeeDB()
         {
             new EmployeeDataSeeder(
