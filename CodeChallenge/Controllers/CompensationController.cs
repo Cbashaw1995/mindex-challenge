@@ -3,13 +3,15 @@ using CodeChallenge.Models;
 using CodeChallenge.Services;
 
 namespace CodeChallenge.Controllers
-{
+{    
+    /// API Controller for managing Compensation-related operations.
     [ApiController]
     [Route("api/compensation")]
     public class CompensationController : ControllerBase
     {
         private readonly ICompensationService _compensationService;
 
+        /// Constructor to inject dependencies.
         public CompensationController(ICompensationService compensationService)
         {
             _compensationService = compensationService;
