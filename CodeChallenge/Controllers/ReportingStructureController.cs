@@ -4,12 +4,16 @@ using CodeChallenge.Services;
 
 namespace CodeChallenge.Controllers
 {
+    /// API Controller for handling operations related to Reporting Structure.
     [ApiController]
     [Route("api/reportingstructure")]
     public class ReportingStructureController : ControllerBase
     {
-        private readonly IEmployeeService _employeeService;
 
+        private readonly IEmployeeService _employeeService;
+        
+        
+        /// Constructor to inject dependencies.
         public ReportingStructureController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
@@ -33,6 +37,8 @@ namespace CodeChallenge.Controllers
             var reportingStructure = new ReportingStructure(employee, GetTotalReports(employee));
             return Ok(reportingStructure);
         }
+
+        /// Recursive helper method to calculate total number of reports for an employee.
         private int GetTotalReports(Employee employee)
         {
             if (employee?.DirectReports == null)
