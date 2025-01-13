@@ -6,10 +6,12 @@ using System.Linq;
 
 namespace CodeChallenge.Repositories
 {
+    /// Repository implementation for managing Compensation records.
     public class CompensationRepository : ICompensationRepository
     {
         private readonly EmployeeContext _context;
 
+        /// Constructor to inject the database context.
         public CompensationRepository(EmployeeContext context)
         {
             _context = context;
@@ -33,9 +35,6 @@ namespace CodeChallenge.Repositories
                 .Include(c => c.Employee)
                 .FirstOrDefault(c => c.EmployeeId == employeeId);
         }
-
-
-
 
         // Saves changes to the database
         public void SaveChanges()
