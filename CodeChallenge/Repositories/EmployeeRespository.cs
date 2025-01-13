@@ -8,11 +8,13 @@ using CodeChallenge.Data;
 
 namespace CodeChallenge.Repositories
 {
+    /// Repository implementation for managing Employee entities.
     public class EmployeeRepository : IEmployeeRepository
     {
         private readonly EmployeeContext _employeeContext;
         private readonly ILogger<IEmployeeRepository> _logger;
 
+        /// Constructor to inject dependencies.
         public EmployeeRepository(ILogger<IEmployeeRepository> logger, EmployeeContext employeeContext)
         {
             _employeeContext = employeeContext;
