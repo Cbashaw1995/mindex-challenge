@@ -32,6 +32,13 @@ namespace CodeChallenge.Controllers
             return CreatedAtRoute("getEmployeeById", new { id = employee.EmployeeId }, employee);
         }
 
+
+
+        /*
+        * Handles HTTP GET request to retrieve an employee by ID.
+        * - If the employee exists, returns 200 OK with employee details.
+        * - If the employee does not exist, returns 404 Not Found.
+        */
         [HttpGet("{id}", Name = "getEmployeeById")]
         public IActionResult GetEmployeeById(String id)
         {

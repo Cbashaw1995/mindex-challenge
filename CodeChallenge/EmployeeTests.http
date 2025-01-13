@@ -1,0 +1,12 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+PUT http://localhost:8080/api/employee/16a596ae-edd3-4847-99fe-c4518e82c86f
+Content-Type: application/json
+
+{
+    "employeeId": "16a596ae-edd3-4847-99fe-c4518e82c86f",
+    "firstName": "John",
+    "lastName": "Lennon",
+    "position": "Senior Engineer",
+    "department": "Engineering",
+    "directReports": []
+}
